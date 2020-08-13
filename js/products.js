@@ -22,8 +22,7 @@ function showCategoriesList(array) {
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ car.name + car.currency + car.cost + `</h4>
-                        <p> ` + car.soldCount + `</p> 
-                        
+                        <small class="text-muted">` + car.soldCount + ` vendidos</small>
                     </div>
                     <div>
                         <p> `+ car.description + `</p> 
