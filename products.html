@@ -23,13 +23,25 @@
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       </div>
     </nav>
-    <div class="container p-5">
+    <main role="main" class="pb-5"> <!--<main> pegado del ejercicio 4.6, revisar si funciona-->
+      <div class="text-center p-4">
+          <h2>Productos</h2>
+          <h4>Verás aquí los productos de la categoría <b>Autos</b></h4>
+      </div>
+      <div class="container">
+          <div class="row"><!--revisar si hace falta-->
+              <div class="list-group" id="car-list-container"><!--cambio nombre de id, elimino class "list-group"-->
+              </div>
+          </div>
+      </div>
+  </main>
+    <!--<div class="container p-5">
       <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
         <h4 class="alert-heading">¡A trabajar! :)</h4>
         <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) y Entrega 2 (Fecha de entrega: 30/08/2020).</p>
         <hr>
         <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-      </div>
+      </div>-->
     </div>
     <footer class="text-muted bg-light">
       <div class="container">
@@ -47,3 +59,5 @@
     <script src="js/products.js"></script>
   </body>
 </html>
+
+<!--JSON const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json"-->

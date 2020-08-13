@@ -40,6 +40,33 @@ var getJSONData = function(url){
     });
 }
 
+//AGREGO TODO DE NUEVO, VER SI ES NECESARIO O SOLO CON MODIFICAR LA URL DEL FETCH DE LA PRIMERA FUNCION ALCANZA//
+
+var getJSONData = function(url){
+  var result = {};
+  showSpinner();
+  return fetch("https://japdevdep.github.io/ecommerce-api/product/all.json")
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }else{
+      throw Error(response.statusText);
+    }
+  })
+  .then(function(response) {
+        result.status = 'ok';
+        result.data = response;
+        hideSpinner();
+        return result;
+  })
+  .catch(function(error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
+  });
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
