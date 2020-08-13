@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-//PEGO LA FUCION COMPLETA, VER SI ES NECESARIO//
-//si funciona agregar precios//
-
 var carsArray = [];
 
 function showCategoriesList(array) {

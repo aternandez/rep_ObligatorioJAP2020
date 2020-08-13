@@ -40,7 +40,6 @@ var getJSONData = function(url){
     });
 }
 
-//AGREGO TODO DE NUEVO, VER SI ES NECESARIO O SOLO CON MODIFICAR LA URL DEL FETCH DE LA PRIMERA FUNCION ALCANZA//
 
 var getJSONData = function(url){
   var result = {};
