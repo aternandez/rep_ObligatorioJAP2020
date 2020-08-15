@@ -1,9 +1,6 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
-
-});
 
 var carsArray = [];
 
@@ -21,7 +18,7 @@ function showCategoriesList(array) {
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ car.name + car.currency + car.cost + `</h4>
+                        <h4 class="mb-1">`+ car.name + " - "+ car.currency + " "+ car.cost + `</h4>
                         <small class="text-muted">` + car.soldCount + ` vendidos</small>
                     </div>
                     <div>
@@ -33,7 +30,7 @@ function showCategoriesList(array) {
         </div>
         `
 
-        document.getElementById("car-list-container").innerHTML = htmlContentToAppend;
+        document.getElementById("list-container").innerHTML = htmlContentToAppend;
     }
 }
 

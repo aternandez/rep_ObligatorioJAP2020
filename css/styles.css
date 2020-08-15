@@ -139,3 +139,62 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/*cambios para login*/
+
+#portada {
+  background: url(../img/cover_back.png);
+  background-size: cover;
+  }
+
+.formulario {
+  background: rgb(206, 63, 117);
+  color: #fff;
+  max-width: 500px;
+  /*margin: 48px center;*/
+  margin-left: 900px;
+  left: 20px;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.formulario h2 {
+  margin: 0 0 28px 0;
+  font-size: 20px bold;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.formulario input[type="text"],
+.formulario input[type="password"] {
+  outline: none;
+  background: lightgray;
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 4px solid rgb(204, 17, 88);
+  font-family: 'Raleway', serif ;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+}
+
+.formulario button {
+  background: rgb(204, 17, 88);
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: normal;
+  font-family: 'Raleway', serif ;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: rgb(170, 14, 74) ;
+}
