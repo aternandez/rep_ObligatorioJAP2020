@@ -27,22 +27,21 @@
       <div style="display: none;" class="py-2 d-none d-md-inline-block">
         <p id="user"></p>
       </div>
-
     </div>
     <!-- DIV buscador, boton de limpiar y botón de salir de sesión-->
-      <div class="buscar-limpiar-salir">
-        <input type="text" id="buscador" placeholder="Buscar productos por marca, modelo o especificaciones" class="buscar">
-        <button type="button" id="limpiar" class="limpiar">Limpiar búsqueda</button>
-        <button type="button" style="display: none;" id="salir" class="salir">Cerrar sesión</button>
-        <br><br>
-      </div>
+    <div class="buscar-limpiar-salir">
+      <input type="text" id="buscador" placeholder="Buscar productos por marca, modelo o especificaciones"
+        class="buscar">
+      <button type="button" id="limpiar-busqueda" class="limpiar-busqueda">Limpiar búsqueda</button>
+      <button type="button" style="display: none;" id="salir" class="salir">Cerrar sesión</button>
+      <br><br>
+    </div>
   </nav>
   <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Productos</h2>
       <p class="lead">Verás aquí los productos de la categoría <b>Autos</b></p>
     </div>
-
     <div class="container">
       <div class="row">
         <div class="col text-right">
@@ -54,14 +53,37 @@
               <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>$$$
             </label>
             <label class="btn btn-light" id="sortSoldCount">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>+
-              Vendidos
+              <input type="radio" name="options" autocomplete="off"><i
+                class="fas fa-sort-amount-down mr-1"></i>+vendidos
             </label>
           </div>
         </div>
       </div>
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <!--DIV filtro por precio/ sigo formarto de categories.html por cualidades bootstrap-->
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Precio</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="limpiar-filtro">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
+    </div>
     <div class="container">
       <div class="row">
         <div class="list-group" id="list-container">

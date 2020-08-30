@@ -258,7 +258,7 @@ a.custom-card:hover {
 
 /*formato botón limpiar de barra buscar*/
 
-#limpiar {
+#limpiar-busqueda {
   background: rgb(204, 17, 88);
   color: #fff;
   border: none;
@@ -272,7 +272,7 @@ a.custom-card:hover {
   cursor: pointer;
 }
 
-#limpiar:hover {
+#limpiar-busqueda:hover {
   background: rgb(170, 14, 74) ;
 }
 
@@ -281,3 +281,8 @@ a.custom-card:hover {
 #buscador {
   float: left;
 }
+
+/*formato filtros de precio
+#filtro-precio {
+  float: left;
+}*/
