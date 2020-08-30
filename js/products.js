@@ -1,8 +1,39 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+// --- constantes para ejecutar funciones de orden --- //
+
+const ORDER_ASC_BY_COST = "cost -> COST";
+const ORDER_DESC_BY_COST = "COST -> cost";
+const ORDER_DESC_BY_SOLDCOUNT = "SOLDCOUNT -> SoldCount";
+
+var buscar = undefined;
 
 var carsArray = [];
+
+function sortCars(criterio, array) {
+    let result = [];
+
+    if (criterio === ORDER_ASC_BY_COST) {
+        result = array.sort(function (a, b) {
+            if (a.cost < b.cost) { return -1; }
+            if (a.cost > b.cost) { return 1; }
+            return 0;
+        });
+    } else if (criterio === ORDER_DESC_BY_COST) {
+        result = array.sort(function (a, b) {
+            if (a.cost > b.cost) {
+                return -1;
+            }
+            return 0;
+
+        });
+    } else if (ORDER_DESC_BY_SOLDCOUNT) {
+        result = array.sort(function (a, b) {
+            if (a.soldCount > b.soldCount) { return -1; }
+            if (a.soldCount < b.soldCount) { return 1; }
+            return 0;
+        });
+    }
+    return result;
+}
 
 function showCategoriesList(array) {
 
@@ -10,29 +41,42 @@ function showCategoriesList(array) {
     for (let i = 0; i < array.length; i++) {
         let car = array[i];
 
-        htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + car.imgSrc + `" alt="` + car.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ car.name + " - "+ car.currency + " "+ car.cost + `</h4>
-                        <small class="text-muted">` + car.soldCount + ` vendidos</small>
-                    </div>
-                    <div>
-                        <p> `+ car.description + `</p> 
-                    </div>
+        if ((buscar == undefined || car.name.toLowerCase().indexOf(buscar) != -1) || 
+        (buscar == undefined || car.description.toLowerCase().indexOf(buscar) != -1)) {
 
+
+
+
+
+            htmlContentToAppend += `
+            <div class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="` + car.imgSrc + `" alt="` + car.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">`+ car.name + " - " + car.currency + " " + car.cost + `</h4>
+                            <small class="text-muted">` + car.soldCount + ` vendidos</small>
+                        </div>
+                        <div>
+                            <p> `+ car.description + `</p> 
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        `
+            `
+        }
 
         document.getElementById("list-container").innerHTML = htmlContentToAppend;
     }
 }
+
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
@@ -42,4 +86,43 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showCategoriesList(carsArray);
         }
     });
+});
+
+//-- addEventListener para llamar funcion sort al clickear el botón de orden--//
+
+document.getElementById("sortCostAsc").addEventListener("click", function () {
+    carsArray = sortCars(ORDER_ASC_BY_COST, carsArray);
+
+    showCategoriesList(carsArray);
+});
+
+document.getElementById("sortCostDesc").addEventListener("click", function () {
+    carsArray = sortCars(ORDER_DESC_BY_COST, carsArray);
+
+    showCategoriesList(carsArray);
+});
+
+document.getElementById("sortSoldCount").addEventListener("click", function () {
+    carsArray = sortCars(ORDER_DESC_BY_SOLDCOUNT, carsArray);
+
+    showCategoriesList(carsArray);
+});
+
+// addEventListener para llamar funcion buscar 
+document.getElementById("buscador").addEventListener('input', function () {
+
+    buscar = document.getElementById("buscador").value.toLowerCase();
+
+    showCategoriesList(carsArray);
+
+});
+
+// addEventListener para limpiar barra de búsqueda <<FUNCIONANDO OK>>
+document.getElementById("limpiar").addEventListener("click", function () {
+    document.getElementById("buscador").value = "";
+
+    buscar = undefined;
+
+    showCategoriesList(carsArray);
+
 });

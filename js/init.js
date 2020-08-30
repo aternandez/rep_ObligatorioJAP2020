@@ -44,3 +44,27 @@ var getJSONData = function(url){
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
+/*mostrar usuario iniciado*/
+
+document.addEventListener("DOMContentLoaded", function (e){
+  
+  let userLogged = localStorage.getItem('User-Logged');
+  let infoUser = document.getElementById("user");
+  let user = document.getElementById("user");
+  let boton = document.getElementById("salir");
+
+  if (userLogged) {
+    userLogged = JSON.parse(userLogged);
+    user.innerText = user.innerText + 'Usuario ingresado: ' + userLogged.user;
+    infoUser.style = "display: inline-block";
+    boton.style = "display: inline-block";
+
+  }
+
+  document.getElementById("salir").addEventListener("click", function() {
+    localStorage.removeItem('User-Logged');
+    window.location = 'index.html';
+  })
+
+});

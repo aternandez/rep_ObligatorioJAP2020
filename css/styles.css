@@ -140,7 +140,7 @@ a.custom-card:hover {
   color: orange;
 }
 
-/*cambios para login*/
+/*formato login*/
 
 #portada {
   background: url(../img/cover_back.png);
@@ -151,7 +151,6 @@ a.custom-card:hover {
   background: rgb(206, 63, 117);
   color: #fff;
   max-width: 500px;
-  /*margin: 48px center;*/
   margin-left: 900px;
   left: 20px;
   border-radius: 5px;
@@ -165,7 +164,7 @@ a.custom-card:hover {
   line-height: 1;
 }
 
-.formulario input[type="text"],
+.formulario input[type="user"],
 .formulario input[type="password"] {
   outline: none;
   background: lightgray;
@@ -174,12 +173,18 @@ a.custom-card:hover {
   padding: 10px 15px;
   color: black;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   border-bottom: 4px solid rgb(204, 17, 88);
   font-family: 'Raleway', serif ;
   font-size: 14px;
   font-weight: normal;
   margin: 0 0 20px 0;
+  transition: all .5s ease;
+}
+
+.formulario input[type="user"]:focus,
+.formulario input[type="password"]:focus  { 
+    border-bottom: 4px solid rgb(170, 14, 74);
 }
 
 .formulario button {
@@ -192,9 +197,87 @@ a.custom-card:hover {
   font-family: 'Raleway', serif ;
   letter-spacing: 1px;
   font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .formulario button:hover {
   background: rgb(170, 14, 74) ;
+}
+
+/*formato botón salir*/
+
+#user {
+  color: #fff;
+  display: inline;
+}
+
+#salir {
+  background: rgb(204, 17, 88);
+  color: #fff;
+  border: none;
+  width: 15%;;
+  padding: 10px 0;
+  font-weight: normal;
+  font-family: 'Raleway', serif ;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 100px;
+  float: right;
+  border-radius: 5px;
+}
+
+#salir:hover {
+  background: rgb(170, 14, 74) ;
+}
+
+/* formato barra buscar*/
+
+.buscar-limpiar-salir input[type="text"] {
+  outline: none;
+  background: lightgray;
+  display: block;
+  width:  50%;
+  padding: 10px 15px;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 4px solid rgb(204, 17, 88);
+  font-family: 'Raleway', serif ;
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 120px;
+  border-radius: 5px 0 0 5px;
+  transition: all .5s ease;
+}
+
+.buscar-limpiar-salir input[type="text"]:focus {
+  border-bottom: 4px solid rgb(170, 14, 74);
+}
+
+/*formato botón limpiar de barra buscar*/
+
+#limpiar {
+  background: rgb(204, 17, 88);
+  color: #fff;
+  border: none;
+  width: 15%;
+  padding: 10px;
+  font-weight: normal;
+  font-family: 'Raleway', serif ;
+  letter-spacing: 1px;
+  font-size: 16px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+#limpiar:hover {
+  background: rgb(170, 14, 74) ;
+}
+
+/*alinear buscar limpiar y salir */
+
+#buscador {
+  float: left;
 }
