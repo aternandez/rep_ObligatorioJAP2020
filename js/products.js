@@ -67,13 +67,14 @@ function showCategoriesList(array) {
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ car.name + " - " + car.currency + " " + car.cost + `</h4>
                             <small class="text-muted">` + car.soldCount + ` vendidos</small>
+                            
                         </div>
                         <div>
                             <p> `+ car.description + `</p> 
                         </div>
-
                     </div>
                 </div>
+                
             </div>
             `
             }
@@ -132,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showCategoriesList(carsArray);
     });
 
-    //-- addEventListener para llamar funcion sort al clickear el botón de orden--//
+    // addEventListener para llamar funcion sort al clickear el botón de orden
 
     document.getElementById("sortCostAsc").addEventListener("click", function () {
         carsArray = sortCars(ORDER_ASC_BY_COST, carsArray);
@@ -171,9 +172,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     });
 
+    // addEventListener para redirigir a product-info.html
+    document.getElementById("list-container").addEventListener("click", function() {
+        window.location = "product-info.html";
+
+    });
 });
-
-
-
-
-

@@ -13,6 +13,9 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <!--link a estilo de estrellas para calificacion-->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
@@ -23,11 +26,13 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
       <!-- DIV datos de usuario-->
       <div style="display: none;" class="py-2 d-none d-md-inline-block">
         <p id="user"></p>
       </div>
     </div>
+
     <!-- DIV buscador y salir-->
     <div class="buscar-limpiar-salir">
       <input type="text" id="buscador" placeholder="Buscar productos" class="buscar" style="display: none;">
@@ -37,6 +42,7 @@
     </div>
     </div>
   </nav>
+  <!--
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -45,6 +51,54 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div>
+  -->
+
+  <!--DIV para mostrar productos y comentarios-->
+  
+    <div id="productos"></div>
+    <div id="imagenes"></div>
+    <div id="comentarios"></div>
+    <p id="queresComentar" style="display: inline-block;">¿Querés dejar tu comentario? Inicia sesión <a href="index.html">aquí.</a></p>
+
+  <!--DIV para nuevo comentario-->
+  <div id="nuevoComentario" class="newComment" type="text" style="display: none;">
+    <br><br>
+    <p><h6>¿Conocés este producto? ¡Contanos tu opinón!</h6></p>
+    <textarea id="newComment" rows="4" cols="100" ></textarea><br>
+    <p>Calificación: </p>
+    
+    <!--DIV para calificación con estrellas-->
+    <div class="star-rating">
+      <input id="star-5" type="radio" name="rating" value="5" />
+      <label for="star-5" title="5 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+  
+      <input id="star-4" type="radio" name="rating" value="4" />
+      <label for="star-4" title="4 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+  
+      <input id="star-3" type="radio" name="rating" value="3" />
+      <label for="star-3" title="3 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+  
+      <input id="star-2" type="radio" name="rating" value="2" />
+      <label for="star-2" title="2 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+  
+      <input id="star-1" type="radio" name="rating" value="1" checked />
+      <label for="star-1" title="1 star">
+        <i class="active fa fa-star"></i>
+      </label>
+    </div>
+    <br><br>
+    <button id="enviarComentario">Enviar</button>
+  </div>
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">

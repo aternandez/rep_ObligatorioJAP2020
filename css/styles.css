@@ -221,7 +221,7 @@ a.custom-card:hover {
   font-weight: normal;
   font-family: 'Raleway', serif ;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   margin-right: 100px;
   float: right;
@@ -233,10 +233,9 @@ a.custom-card:hover {
 }
 
 /* formato barra buscar*/
-
 .buscar-limpiar-salir input[type="text"] {
   outline: none;
-  background: lightgray;
+  background:rgb(235, 235, 235);
   display: block;
   width:  50%;
   padding: 10px 15px;
@@ -257,17 +256,15 @@ a.custom-card:hover {
 }
 
 /*formato botón limpiar de barra buscar*/
-
 #limpiar-busqueda {
   background: rgb(204, 17, 88);
   color: #fff;
   border: none;
-  width: 15%;
-  padding: 10px;
+  width: 11%;
+  padding: 12px;
   font-weight: normal;
   font-family: 'Raleway', serif ;
-  letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
@@ -277,12 +274,91 @@ a.custom-card:hover {
 }
 
 /*alinear buscar limpiar y salir */
-
 #buscador {
   float: left;
 }
 
-/*formato filtros de precio
-#filtro-precio {
-  float: left;
-}*/
+/*margen nuevo comentario product-info.html*/
+#productos {
+  margin: 30px 50px 0 50px;
+}
+
+#nuevoComentario {
+  margin-left: 50px;
+}
+
+#comentarios {
+  margin-left: 50px;
+}
+
+/*margen para imagenes product-info.html*/
+#imagenes {
+  margin-left: 3px;
+}
+
+#ver-producto:hover {
+  background: rgb(170, 14, 74) ;
+}
+
+/*formato botón enviar comentario*/
+#enviarComentario {
+  background: rgb(204, 17, 88);
+  color: #fff;
+  border: none;
+  width: 10%;
+  padding: 10px;
+  font-weight: normal;
+  font-family: 'Raleway', serif ;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#enviarComentario:hover {
+  background: rgb(170, 14, 74) ;
+}
+
+/* formato campo nuevo comentario*/
+#newComment  {
+  outline: none;
+  background: rgb(235, 235, 235);
+  display: block;
+  width:  50%;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 4px solid rgb(204, 17, 88);
+  font-family: 'Raleway', serif ;
+  font-size: 14px;
+  font-weight: normal;
+  border-radius: 5px 0 0 5px;
+  transition: all .5s ease;
+}
+
+/*-------------------*/
+
+.star-rating {
+  direction: rtl;
+  display: inline-block;
+
+}
+
+.star-rating input[type=radio] {
+  display: none
+}
+
+.star-rating label {
+  color: rgb(133, 142, 192);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input[type=radio]:checked~label {
+  color: #ffbf00
+}
+
+#list-container {
+ cursor: pointer; 
+}
