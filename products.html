@@ -22,22 +22,32 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <!-- DIV datos de usuario-->
-      <div style="display: none;" class="py-2 d-none d-md-inline-block">
-        <p id="user"></p>
+      <!--<a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
+
+      <!-- DIV para botón de usuario ingresado y perfil -->
+      <div class="dropdown mt-2">
+        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <a id="salir" class="dropdown-item">Cerrar sesión</a>
+        </div>
       </div>
-    </div>
-    <!-- DIV buscador, boton de limpiar y botón de salir de sesión-->
-    <div class="buscar-limpiar-salir">
+  </nav>
+  <main role="main" class="pb-5">
+
+    <!-- DIV buscador y boton de limpiar-->
+    <div class="buscar-limpiar">
+      <br>
       <input type="text" id="buscador" placeholder="Buscar productos por marca, modelo o especificaciones"
         class="buscar">
       <button type="button" id="limpiar-busqueda" class="limpiar-busqueda">Limpiar búsqueda</button>
-      <button type="button" style="display: none;" id="salir" class="salir">Cerrar sesión</button>
       <br><br>
     </div>
-  </nav>
-  <main role="main" class="pb-5">
+
     <div class="text-center p-4">
       <h2>Productos</h2>
       <p class="lead">Verás aquí los productos de la categoría <b>Autos</b></p>
@@ -63,7 +73,7 @@
         <div class="col-md-6"></div>
         <div class="col-md-6 col-sm-12 mb-1 container">
           <div class="row container p-0 m-0">
-            
+
             <!--DIV filtro por precio/ sigo formato de categories.html por cualidades bootstrap-->
             <div class="col">
               <p class="font-weight-normal text-right my-2">Precio</p>

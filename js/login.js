@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         localStorage.setItem("User-Logged", JSON.stringify({ user: inputUser.value}));
         window.location = 'cover.html';
     } else {
-        alert ("Ingrese sus datos para acceder a su cuenta.");
+        alert ("Ingrese usuario y contraseña para acceder a su cuenta.");
     }
 
     });

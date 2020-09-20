@@ -3,6 +3,37 @@
 //elementos HTML presentes.
 var producto = {};
 var comentariosArray = [];
+var productosArray = [];
+
+function showRelatedProducts(arrayListado, arrayRelaccionados) {
+    let contenido = "<br>";
+
+    arrayRelaccionados.forEach(function(i){
+        contenido += `
+                           
+                            <div class="list-group-item list-group-item-action">
+                                <div class="row">
+                                        <div class="col-3">
+                                            <img src="${arrayListado[i].imgSrc}" alt="${arrayListado[i].description}" class="img-thumbnail">
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h4 class="mb-1">${arrayListado[i].name} - ${arrayListado[i].currency} ${arrayListado[i].cost} </h4>
+                                                <small class="text-muted"> ${arrayListado[i].soldCount} vendidos</small>    
+                                            </div>
+                                            <div>
+                                                <p> ${arrayListado[i].description}</p> 
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        `;
+        
+    });
+
+    document.getElementById("relacionados").innerHTML = contenido;
+
+}
 
 function showProducts (producto, arrayComments) {
     let info ="";
@@ -11,6 +42,43 @@ function showProducts (producto, arrayComments) {
 
 
 
+    
+    imgs += `
+
+
+                    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="2000">
+                                <img src="${producto.images[0]}" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="${producto.images[1]}" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="${producto.images[2]}" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="${producto.images[3]}" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="${producto.images[4]}" class="d-block w-100" alt="">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+  
+
+                    <br><br>
+                    `;
+
+                
     info += `
 
                     <div class="list-group-item list-group-item-action">
@@ -22,16 +90,6 @@ function showProducts (producto, arrayComments) {
                     <br><br>
                     `;
 
-    imgs += `
-
-                    <img class="img" src="${producto.images[0]}" width="265px" height="215px" alt="">
-                    <img class="img" src="${producto.images[1]}" width="265px" height="215px" alt="">
-                    <img class="img" src="${producto.images[2]}" width="265px" height="215px" alt="">
-                    <img class="img" src="${producto.images[3]}" width="265px" height="215px" alt="">
-                    <img class="img" src="${producto.images[4]}" width="265px" height="215px" alt="">
-                    `;
-
-   
 
     arrayComments.forEach(function (comment) {
         let puntos = "";
@@ -66,17 +124,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok") {
             comentariosArray = resultObj.data;
         }
-
+        getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
+            if (resultObj.status === "ok"){
+                producto = resultObj.data;
+    
+                showProducts(producto, comentariosArray);
+            }
+    
+            getJSONData(PRODUCTS_URL).then(function(resultObj) {
+                if (resultObj.status === "ok") {
+                    productosArray = resultObj.data;
+        
+                    showRelatedProducts(productosArray, producto.relatedProducts);
+                }
+            });
+        });
     });
     
-    getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
-        if (resultObj.status === "ok"){
-            producto = resultObj.data;
+    
 
-            showProducts(producto, comentariosArray);
-        }
 
-    });
+    
     
     //mostrar campo de comentario si hay usuario logueado
     let userLogged = localStorage.getItem('User-Logged');
@@ -84,9 +152,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         document.getElementById("nuevoComentario").style = "display: inline-block";
         document.getElementById("queresComentar").style="display: none";
     }
-
-    //no mostar link inicio de sesion si hay usuario logueado
-
     
     //mostrar comentario en pantalla con fecha y hora
     document.getElementById("enviarComentario").addEventListener("click", function () {
@@ -103,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             }
         }
 
-        
         let nuevoComentario = {
             score: newScore,
             description: document.getElementById('newComment').value,
@@ -121,5 +185,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProducts(producto, comentariosArray);   
     
     }); 
+
+
+    // addEventListener para ir a información del producto seleccionado (en este caso solo recarga product-info.html)
+    document.getElementById("relacionados").addEventListener("click", function() {
+        window.location = "product-info.html";
+
+    });
 
 });

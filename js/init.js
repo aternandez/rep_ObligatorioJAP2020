@@ -59,7 +59,8 @@ document.addEventListener("DOMContentLoaded", function (e){
     user.innerText = user.innerText + 'Usuario ingresado: ' + userLogged.user;
     infoUser.style = "display: inline-block";
     boton.style = "display: inline-block";
-
+  } else {
+    infoUser.style = "display: none";
   }
 
   document.getElementById("salir").addEventListener("click", function() {

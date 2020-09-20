@@ -212,7 +212,8 @@ a.custom-card:hover {
   display: inline;
 }
 
-#salir {
+
+/*#salir {
   background: rgb(204, 17, 88);
   color: #fff;
   border: none;
@@ -230,10 +231,10 @@ a.custom-card:hover {
 
 #salir:hover {
   background: rgb(170, 14, 74) ;
-}
+}*/
 
 /* formato barra buscar*/
-.buscar-limpiar-salir input[type="text"] {
+.buscar-limpiar input[type="text"] {
   outline: none;
   background:rgb(235, 235, 235);
   display: block;
@@ -246,12 +247,12 @@ a.custom-card:hover {
   font-family: 'Raleway', serif ;
   font-size: 14px;
   font-weight: normal;
-  margin-left: 120px;
+  margin-left: 270px;
   border-radius: 5px 0 0 5px;
   transition: all .5s ease;
 }
 
-.buscar-limpiar-salir input[type="text"]:focus {
+.buscar-limpiar input[type="text"]:focus {
   border-bottom: 4px solid rgb(170, 14, 74);
 }
 
@@ -296,11 +297,7 @@ a.custom-card:hover {
   margin-left: 3px;
 }
 
-#ver-producto:hover {
-  background: rgb(170, 14, 74) ;
-}
-
-/*formato botón enviar comentario*/
+/*botón enviar comentario*/
 #enviarComentario {
   background: rgb(204, 17, 88);
   color: #fff;
@@ -318,7 +315,7 @@ a.custom-card:hover {
   background: rgb(170, 14, 74) ;
 }
 
-/* formato campo nuevo comentario*/
+/*campo nuevo comentario*/
 #newComment  {
   outline: none;
   background: rgb(235, 235, 235);
@@ -335,8 +332,7 @@ a.custom-card:hover {
   transition: all .5s ease;
 }
 
-/*-------------------*/
-
+/*estrellas de calificación*/
 .star-rating {
   direction: rtl;
   display: inline-block;
