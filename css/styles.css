@@ -358,3 +358,21 @@ a.custom-card:hover {
 #list-container {
  cursor: pointer; 
 }
+
+/*carrito*/
+
+#imagenCarrito {
+  float: right;
+  width: 380px;
+}
+
+#imagenComentario {
+  float: right;
+  width: 450px;
+  margin-right: 100px;
+}
+
+#imagenEnvio {
+  float: left;
+  width: 380px;
+}

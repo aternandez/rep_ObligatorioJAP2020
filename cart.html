@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
@@ -44,7 +45,8 @@
 
       <!-- DIV para botón de usuario ingresado y perfil -->
       <div class="dropdown mt-2">
-        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
@@ -54,6 +56,7 @@
         </div>
       </div>
   </nav>
+  <!--
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -63,6 +66,67 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div>
+  -->
+
+  <br>
+  <!--<div><img id="imagenCarrito" src="../rep_ObligatorioJAP2020/img/Online shopping-pana.png"></div>-->
+  <h4 style="margin-left: 20px;">Compras a confirmar</h4>
+  <br>
+
+  <div class="compra" id="compra" style="margin-left: 20px;">
+    <table class="table table-striped" style="width: 70%;">
+      <thead>
+        <tr>
+          <th scope="col">Artículo</th>
+          <th scope="col">Precio Unitario</th>
+          <th scope="col">Unidades</th>
+          <th scope="col">Subtotal u$s</th>
+        </tr>
+      </thead>
+      <tbody id="listado"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" style="font-weight: bold;">Total de la compra: </td>
+          <td id="total" style="font-weight: bold;"></td>
+        </tr>
+        <tr>
+          <td colspan="4"><sub>*Tipo de cambio del día: $40</sub></td>
+        </tr>
+      </tfoot>
+    </table>
+    <span></span>
+  </div>
+  
+
+  <!--<div><img id="imagenEnvio" src="../rep_ObligatorioJAP2020/img/Free shipping-rafiki.png"></div>-->
+  <br>
+  <h4 style="margin-left: 20px;">Tipo de envío</h4>
+  <div style="margin-left: 20px;">
+    <input id="premium" name="envio" type="radio" value="15" checked="" required="">
+    <label for="premium"><strong>PREMIUM| </strong>Demora: entre 2 y 5 días. Costo: 15% sobre el total de la compra.</label><br>
+
+    <input id="express" name="envio" type="radio" value="7" required="">
+    <label for="express"><strong>EXPRESS| </strong>Demora: entre 5 y 8 días. Costo: 7% sobre el total de la compra.</label><br>
+
+    <input id="standard" name="envio" type="radio" value="5" required="">
+    <label for="standard"><strong>STANDARD| </strong>Demora: entre 12 y 15 días. Costo: 5% sobre el total de la compra</label><br>
+  </div>
+  <br>
+
+<!--
+  <div class="envio">
+    <table class="table table-striped" style="width: 50%;">
+      <thead>
+        <tr>
+          <th>Total de la compra</th>
+          <th>Costo del envío</th>
+          <th>Total </th>
+        </tr>
+      </thead>
+    <tbody id="totalEnvio"></tbody>
+    </table>
+  </div>
+-->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -71,11 +135,14 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
 </body>
+
+<!--<a href="https://stories.freepik.com/online">Illustration by Freepik Stories</a>-->
 
 </html>

@@ -6,3 +6,5 @@
 [0827/191544.293:ERROR:exception_snapshot_win.cc(98)] thread ID 721368 not found in process
 [0827/191544.293:ERROR:exception_snapshot_win.cc(98)] thread ID 721380 not found in process
 [0827/191544.293:ERROR:exception_snapshot_win.cc(98)] thread ID 721384 not found in process
+[1008/210948.461:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1011/103908.350:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
