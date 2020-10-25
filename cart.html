@@ -36,11 +36,11 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="cover.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+    <div class="container d-flex flex-column flex-sm-row flex-md-row justify-content-between">
+      <a class="py-2 d-sm-inline-block d-md-inline-block" href="cover.html">Inicio</a>
+      <a class="py-2 d-sm-inline-block d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <a class="py-2 d-sm-inline-block d-md-inline-block" href="sell.html">Vender</a>
       <!--<a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
 
       <!-- DIV para botón de usuario ingresado y perfil -->
@@ -69,14 +69,14 @@
   -->
 
   <br>
-  <!--<div><img id="imagenCarrito" src="../rep_ObligatorioJAP2020/img/Online shopping-pana.png"></div>-->
   <h4 style="margin-left: 20px;">Compras a confirmar</h4>
   <br>
 
-  <div class="compra" id="compra" style="margin-left: 20px;">
+  <div class="compra" id="compra" style="margin-left: 20px; ">
     <table class="table table-striped" style="width: 70%;">
       <thead>
         <tr>
+          <th></th>
           <th scope="col">Artículo</th>
           <th scope="col">Precio Unitario</th>
           <th scope="col">Unidades</th>
@@ -86,47 +86,110 @@
       <tbody id="listado"></tbody>
       <tfoot>
         <tr>
-          <td colspan="3" style="font-weight: bold;">Total de la compra: </td>
+          <td colspan="4" style="font-weight: bold;">Total de la compra: </td>
           <td id="total" style="font-weight: bold;"></td>
         </tr>
         <tr>
-          <td colspan="4"><sub>*Tipo de cambio del día: $40</sub></td>
+          <td colspan="5"><sub>*Tipo de cambio del día: $40</sub></td>
         </tr>
       </tfoot>
     </table>
     <span></span>
   </div>
-  
 
-  <!--<div><img id="imagenEnvio" src="../rep_ObligatorioJAP2020/img/Free shipping-rafiki.png"></div>-->
-  <br>
-  <h4 style="margin-left: 20px;">Tipo de envío</h4>
-  <div style="margin-left: 20px;">
-    <input id="premium" name="envio" type="radio" value="15" checked="" required="">
-    <label for="premium"><strong>PREMIUM| </strong>Demora: entre 2 y 5 días. Costo: 15% sobre el total de la compra.</label><br>
 
-    <input id="express" name="envio" type="radio" value="7" required="">
-    <label for="express"><strong>EXPRESS| </strong>Demora: entre 5 y 8 días. Costo: 7% sobre el total de la compra.</label><br>
+  <form id="needs-validation" novalidate>
+    <div class="envio">
 
-    <input id="standard" name="envio" type="radio" value="5" required="">
-    <label for="standard"><strong>STANDARD| </strong>Demora: entre 12 y 15 días. Costo: 5% sobre el total de la compra</label><br>
+      <div>
+        <h4>Dirección</h4>
+        <input type="text" id="pais" class="form-control" placeholder="Pais" required><br>
+        <input type="text" id="calle" class="form-control" placeholder="Calle" required><br>
+        <input type="number" id="numeroPuerta" class="form-control" placeholder="Número de puerta" required><br>
+        <input type="text" id="esquina" class="form-control" placeholder="Esquina" required><br>
+      </div>
+
+      <div>
+        <h4>Tipo de envío</h4>
+        <input id="premium" name="envio" type="radio" value="15" checked="" required="">
+        <label for="premium"><strong>PREMIUM| </strong>Demora: entre 2 y 5 días. Costo: 15% sobre el total de la
+          compra.</label><br>
+
+        <input id="express" name="envio" type="radio" value="7" required="">
+        <label for="express"><strong>EXPRESS| </strong>Demora: entre 5 y 8 días. Costo: 7% sobre el total de la
+          compra.</label><br>
+
+        <input id="standard" name="envio" type="radio" value="5" required="">
+        <label for="standard"><strong>STANDARD| </strong>Demora: entre 12 y 15 días. Costo: 5% sobre el total de la
+          compra</label><br>
+      </div><br>
+
+      <!-- Button trigger modal -->
+      <a class="btn btn-primary" id="botonPagar" data-toggle="modal" data-target="#modalPagar" style="color: white;">Ingresar forma de pago</a>
+
+      <div class="pagar" id="pagar"></div>
+
+      <br><br>
+
+      <div class="envio">
+        <table class="table table-striped" style="width: 50%;">
+          <thead>
+            <tr>
+              <th>Total de la compra</th>
+              <th>Costo del envío</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="totalEnvio"></tbody>
+        </table>
+      </div>
+      <button type="submit" class="btn btn-success">FINALIZAR COMPRA</button>
+      <br><br>
+    </div>
+  </form>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalPagar">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Seleccionar forma de pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <input id="tarjeta" name="formaPago" type="radio" value="1" checked>
+          <label for="tarjeta">Tarjeta de crédito</label><br>
+
+          <input id="cuenta" name="formaPago" type="radio" value="2">
+          <label for="cuenta">Transferencia bancaria</label><br>
+
+          <div id="datosTarjeta">
+            <input type="number" class="form-control" id="numeroTarjeta" placeholder="Número de tarjeta">
+            <input type="text" class="form-control" id="titularTarjeta" placeholder="Nombre del titular">
+            <input type="date" class="form-control" id="vencimientoTarjeta" placeholder="Vencimiento">
+            <input type="number" class="form-control" id="seguridadTarjeta" placeholder="CVV">
+          </div>
+
+          <div id="datosTransferencia" class="d-none">
+            <select class="form-control">
+              <option>BROU</option>
+              <option>Santander</option>
+              <option>Scotiabank</option>
+              <option>Itaú</option>
+              <option>BBVA</option>
+            </select>
+            <input type="text" class="form-control" id="titularCuenta" placeholder="Titular de la cuenta">
+            <input type="number" class="form-control" id="numeroCuenta" placeholder="Número de la cuenta">
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-block btn-success" data-dismiss="modal">Confirmar pago</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
 
-<!--
-  <div class="envio">
-    <table class="table table-striped" style="width: 50%;">
-      <thead>
-        <tr>
-          <th>Total de la compra</th>
-          <th>Costo del envío</th>
-          <th>Total </th>
-        </tr>
-      </thead>
-    <tbody id="totalEnvio"></tbody>
-    </table>
-  </div>
--->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -142,7 +205,5 @@
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
 </body>
-
-<!--<a href="https://stories.freepik.com/online">Illustration by Freepik Stories</a>-->
 
 </html>

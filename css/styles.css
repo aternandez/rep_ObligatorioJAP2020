@@ -376,3 +376,8 @@ a.custom-card:hover {
   float: left;
   width: 380px;
 }
+
+.envio{
+  margin-left: 20px;
+  max-width: 900px;
+}
