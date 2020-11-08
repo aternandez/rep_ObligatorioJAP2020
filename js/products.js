@@ -58,25 +58,17 @@ function showCategoriesList(array) {
 
 
                 htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + car.imgSrc + `" alt="` + car.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ car.name + " - " + car.currency + " " + car.cost + `</h4>
-                            <small class="text-muted">` + car.soldCount + ` vendidos</small>
-                            
-                        </div>
-                        <div>
-                            <p> `+ car.description + `</p> 
-                        </div>
-                    </div>
-                </div>
                 
-            </div>
-            `
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card my-3" style="width: 25rem; align-items: center;">
+                                <img class="card-img-top" src="${car.imgSrc}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">${car.name} - ${car.currency} ${car.cost}</h5>
+                                    <p class="card-text">${car.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                `            
             }
         }
 

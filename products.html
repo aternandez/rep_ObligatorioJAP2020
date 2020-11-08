@@ -16,92 +16,93 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="cover.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <!--<a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
+  <div class="container-fluid">
+    <div class="col-md-12 col-sm-12">
+      <nav class="site-header sticky-top py-1 bg-dark">
+        <div class="container d-flex flex-column flex-sm-row flex-md-row justify-content-between">
+          <a class="py-2 d-sm-inline-block d-md-inline-block" href="cover.html">Inicio</a>
+          <a class="py-2 d-sm-inline-block d-md-inline-block" href="categories.html">Categorías</a>
+          <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+          <a class="py-2 d-sm-inline-block d-md-inline-block" href="sell.html">Vender</a>
 
-      <!-- DIV para botón de usuario ingresado y perfil -->
-      <div class="dropdown mt-2">
-        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="cart.html">Mi carrito</a>
-          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-          <div class="dropdown-divider"></div>
-          <a id="salir" class="dropdown-item">Cerrar sesión</a>
+          <!-- DIV para botón de usuario ingresado y perfil -->
+          <div class="dropdown mt-2">
+            <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <div class="dropdown-divider"></div>
+              <a id="salir" class="dropdown-item">Cerrar sesión</a>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+
+  <main role="main" class="pb-5"></main>
+
+  <!-- DIV buscador y boton de limpiar-->
+  <div class="buscar-limpiar">
+    <br>
+    <input type="text" id="buscador" placeholder="Buscar productos por marca, modelo o especificaciones" class="buscar">
+    <button type="button" id="limpiar-busqueda" class="limpiar-busqueda d-none d-md-block btn-md">Limpiar
+      búsqueda</button>
+    <br><br>
+  </div>
+
+  <div class="text-center p-4">
+    <h2>Productos</h2>
+    <p class="lead">Verás aquí los productos de la categoría <b>Autos</b></p>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col text-right">
+        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+          <label class="btn btn-light active" id="sortCostAsc">
+            <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-sort-amount-up mr-1"></i>$
+          </label>
+          <label class="btn btn-light" id="sortCostDesc">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>$$$
+          </label>
+          <label class="btn btn-light" id="sortSoldCount">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>+vendidos
+          </label>
         </div>
       </div>
-  </nav>
-  <main role="main" class="pb-5">
-
-    <!-- DIV buscador y boton de limpiar-->
-    <div class="buscar-limpiar">
-      <br>
-      <input type="text" id="buscador" placeholder="Buscar productos por marca, modelo o especificaciones"
-        class="buscar">
-      <button type="button" id="limpiar-busqueda" class="limpiar-busqueda">Limpiar búsqueda</button>
-      <br><br>
     </div>
+    <div class="row justify-content-end">
+      <div class="col-md-6"></div>
+      <div class="col-md-6 col-sm-12 mb-1 container">
+        <div class="row container p-0 m-0">
 
-    <div class="text-center p-4">
-      <h2>Productos</h2>
-      <p class="lead">Verás aquí los productos de la categoría <b>Autos</b></p>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col text-right">
-          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-            <label class="btn btn-light active" id="sortCostAsc">
-              <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-sort-amount-up mr-1"></i>$
-            </label>
-            <label class="btn btn-light" id="sortCostDesc">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>$$$
-            </label>
-            <label class="btn btn-light" id="sortSoldCount">
-              <input type="radio" name="options" autocomplete="off"><i
-                class="fas fa-sort-amount-down mr-1"></i>+vendidos
-            </label>
+          <!--DIV filtro precio-->
+          <div class="col">
+            <p class="font-weight-normal text-right my-2">Precio</p>
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+          </div>
+          <div class="col-3 p-0">
+            <div class="btn-group" role="group">
+              <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
+              <button class="btn btn-link btn-sm" id="limpiar-filtro">Limpiar</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row justify-content-end">
-        <div class="col-md-6"></div>
-        <div class="col-md-6 col-sm-12 mb-1 container">
-          <div class="row container p-0 m-0">
-
-            <!--DIV filtro por precio/ sigo formato de categories.html por cualidades bootstrap-->
-            <div class="col">
-              <p class="font-weight-normal text-right my-2">Precio</p>
-            </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-            </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-            </div>
-            <div class="col-3 p-0">
-              <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="limpiar-filtro">Limpiar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="list-group" id="list-container">
-        </div>
-      </div>
-    </div>
-  </main>
+  </div>
+  </div>
+  <div class="col-md-12 col-lg-9">
+    <div class="row" id="list-container"></div>
+  </div>
+</main>
   <!--<div class="container p-5">
       <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
         <h4 class="alert-heading">¡A trabajar! :)</h4>

@@ -205,13 +205,12 @@ a.custom-card:hover {
   background: rgb(170, 14, 74) ;
 }
 
-/*formato botón salir*/
-
+/*formato botón salir
 #user {
   color: #fff;
   display: inline;
 }
-
+*/
 
 /*#salir {
   background: rgb(204, 17, 88);
@@ -268,6 +267,7 @@ a.custom-card:hover {
   font-size: 14px;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  float: left;
 }
 
 #limpiar-busqueda:hover {
@@ -380,4 +380,40 @@ a.custom-card:hover {
 .envio{
   margin-left: 20px;
   max-width: 900px;
+}
+
+.divPerfil {
+  margin-left: 400px;
+  background-color: gainsboro;
+  max-width: 600px;
+  border: gray;
+  border-radius: 10px;
+}
+
+#imgPerfil {
+  width: 150px;
+  align-self: center;
+}
+
+input[type=text] {
+  margin-left: 15px;
+  max-width: 570px;
+}
+
+input[type=number] {
+  margin-left: 15px;
+  max-width: 570px;
+}
+
+input[type=email] {
+  margin-left: 15px;
+  max-width: 570px;
+}
+
+label {
+  margin-left: 15px;
+}
+
+.imgPerfil {
+  margin-left: 15px;
 }

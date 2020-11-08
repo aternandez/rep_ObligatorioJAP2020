@@ -28,33 +28,72 @@
       }
     }
   </style>
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="cover.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <!--<a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
+  <div class="container-fluid">
+    <div class="col-md-12 col-sm-12">
+      <nav class="site-header sticky-top py-1 bg-dark">
+        <div class="container d-flex flex-column flex-sm-row flex-md-row justify-content-between">
+          <a class="py-2 d-sm-inline-block d-md-inline-block" href="cover.html">Inicio</a>
+          <a class="py-2 d-sm-inline-block d-md-inline-block" href="categories.html">Categorías</a>
+          <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+          <a class="py-2 d-sm-inline-block d-md-inline-block" href="sell.html">Vender</a>
 
-      <!-- DIV para botón de usuario ingresado y perfil -->
-      <div class="dropdown mt-2">
-        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="cart.html">Mi carrito</a>
-          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-          <div class="dropdown-divider"></div>
-          <a id="salir" class="dropdown-item">Cerrar sesión</a>
-        </div>
-      </div>
+          <!-- DIV para botón de usuario ingresado y perfil -->
+          <div class="dropdown mt-2">
+            <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <div class="dropdown-divider"></div>
+              <a id="salir" class="dropdown-item">Cerrar sesión</a>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
 
-  </nav>
+  <h1>Mi perfil</h1>
+
+  <div class="divPerfil">
+    <br>
+    <label for="imgUrl">Imagen de perfil:</label>
+    <div class="divImgPerfil">
+      <img class="imgPerfil" id="imgPerfil" src="img/add-user.png" alt=""><br>
+      <input type="text" class="form-control" id="imgUrl" placeholder="URL de nueva imagen de perfil" value=""><br>
+    </div>
+
+    <label for="nombres">Nombres:</label>
+    <input type="text" class="form-control" id="nombres" value=""><br>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" class="form-control" id="apellidos" value=""><br>
+
+    <label for="edad">Edad:</label>
+    <input type="number" class="form-control" id="edad" value=""><br>
+
+    <label for="email">E-mail:</label>
+    <input type="email" class="form-control" id="email" value=""><br>
+
+    <label for="telefono">Teléfono de contacto</label>
+    <input type="number" class="form-control" id="telefono" value=""><br>
+
+    <button class="btn btn-primary" style="margin-left: 15px;" id="guardar">Guardar cambios</button>
+    <button class="btn btn-secondary" id="limpiar">Limpiar</button>
+    <br><br>
+
+
+  </div>
+
+
+  <!--
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -74,7 +113,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
+  </div>-->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
